@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(160deg, #000000 0%, #1a1a1a 35%, #0d0d0d 70%, #000000 100%);
+  background-attachment: fixed;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Scroll reveal animations */
+.scroll-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-section.is-hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Hero name styling */
+.hero-greeting {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.hero-name {
+  display: block;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin-top: 0.25rem;
+  letter-spacing: 0.04em;
+  min-height: 1.2em;
+}
+
+.hero-name .typewriter-cursor {
+  display: inline-block;
+  width: 4px;
+  height: 0.85em;
+  background: #b0b0b0;
+  margin-left: 4px;
+  vertical-align: text-bottom;
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Profile stays sharp while hero section fades */
+.profile-container {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Profile picture with metallic glow ring */
+.profile-wrapper {
+  position: relative;
+  width: 18rem;
+  height: 18rem;
+  padding: 3px;
+  border-radius: 50%;
+  z-index: 10;
+  background: linear-gradient(
+    135deg,
+    #6b6b6b 0%,
+    #d4d4d4 25%,
+    #8a8a8a 50%,
+    #e8e8e8 75%,
+    #5a5a5a 100%
+  );
+  background-size: 300% 300%;
+  animation: metallic-shine 4s ease-in-out infinite;
+  box-shadow:
+    0 0 12px rgba(180, 180, 180, 0.45),
+    0 0 24px rgba(140, 140, 140, 0.25),
+    inset 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.profile-image {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  background: #000;
+}
+
+/* Section backgrounds */
+.section-dark {
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.95) 0%, rgba(0, 0, 0, 0.98) 100%);
+}
+
+.section-alt {
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0.6) 0%, rgba(8, 8, 8, 0.8) 100%);
+}
+
+/* Accent grey text */
+.text-muted {
+  color: #a3a3a3;
+}
+
+.text-accent-grey {
+  color: #d4d4d4;
+}
+
+/* Header */
+.site-header {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #333333;
+}
+
+.nav-link {
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #a3a3a3;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #ffffff;
+  color: #000000;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #d4d4d4;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 1px solid #737373;
+  color: #ffffff;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.btn-outline:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Cards */
+.project-card {
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid #333333;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: #525252;
+  transform: translateY(-4px);
+}
+
+/* Section headings */
+.section-heading {
+  color: #ffffff;
+  position: relative;
+}
+
+.section-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #737373, #d4d4d4, #737373);
+  margin: 0.75rem auto 0;
+  border-radius: 2px;
+}
+
+/* Contact form */
+.form-input {
+  background: rgba(30, 30, 30, 0.9);
+  border: 1px solid #404040;
+  color: #ffffff;
+  transition: border-color 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: #737373;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #a3a3a3;
+}
+
+.contact-link {
+  color: #d4d4d4;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: #ffffff;
+}
+
+@keyframes metallic-shine {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
